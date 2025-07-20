@@ -1,4 +1,4 @@
-package com.example.member.dto;
+package com.example.member.member.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,5 +1,6 @@
-package com.example.member.domain;
+package com.example.member.member.domain;
 
+import com.example.member.Common.domain.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Member {
+public class Member extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,22 +32,6 @@ public class Member {
     private LocalDateTime accountDate;
     @UpdateTimestamp
     private LocalDateTime updatedTime;
-
-    public Member(String name, String email, String password, String phoneNumber) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public Member(String name, String email, String password, String phoneNumber, State state, MemberType type) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.state = state;
-        this.type = type;
-    }
 
     public void updatePw(String newPassword) {
         this.password = newPassword;

@@ -1,11 +1,12 @@
-package com.example.member.service;
+package com.example.member.member.service;
 
-import com.example.member.domain.Member;
-import com.example.member.dto.MemberCreateDto;
-import com.example.member.dto.MemberDetailDto;
-import com.example.member.dto.MemberListDto;
-import com.example.member.dto.MemberUpdatePwDto;
-import com.example.member.repository.MemberRepository;
+import com.example.member.member.domain.Member;
+import com.example.member.member.dto.MemberCreateDto;
+import com.example.member.member.dto.MemberDetailDto;
+import com.example.member.member.dto.MemberListDto;
+import com.example.member.member.dto.MemberUpdatePwDto;
+import com.example.member.member.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 public class MemberService {
     private final MemberRepository memberRepository;
 
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

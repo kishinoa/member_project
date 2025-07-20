@@ -1,8 +1,8 @@
-package com.example.member.dto;
+package com.example.member.member.dto;
 
-import com.example.member.domain.Member;
-import com.example.member.domain.MemberType;
-import com.example.member.domain.State;
+import com.example.member.member.domain.Member;
+import com.example.member.member.domain.MemberType;
+import com.example.member.member.domain.State;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,6 +23,13 @@ public class MemberCreateDto {
     private MemberType type = MemberType.User;
 
     public Member toEntity() {
-        return new Member(this.name, this.email, this.password, this.phoneNumber, this.state, this.type);
+        return Member.builder()
+                .name(this.name)
+                .email(this.email)
+                .password(this.password)
+                .phoneNumber(this.phoneNumber)
+                .state(this.state)
+                .type(this.type)
+                .build();
     }
 }

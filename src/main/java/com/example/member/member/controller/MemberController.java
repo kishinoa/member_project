@@ -1,9 +1,10 @@
-package com.example.member.controller;
+package com.example.member.member.controller;
 
-import com.example.member.dto.CommonDto;
-import com.example.member.dto.MemberCreateDto;
-import com.example.member.dto.MemberUpdatePwDto;
-import com.example.member.service.MemberService;
+import com.example.member.Common.dto.CommonDto;
+import com.example.member.member.dto.MemberCreateDto;
+import com.example.member.member.dto.MemberUpdatePwDto;
+import com.example.member.member.service.MemberService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ public class MemberController {
 
     private final MemberService memberService;
 
+    @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
     }
